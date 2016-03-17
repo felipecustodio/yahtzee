@@ -21,7 +21,6 @@ public class Dado {
 	/**
 	 * Construtor que retorna um dado com n lados
 	 * @param  n Número de lados desejado
-	 * @return   Dado inicializado com n lados
 	 */
 	public Dado(int n) {
 		lados = n;
@@ -42,8 +41,8 @@ public class Dado {
 	 */
 	public int rolar() {
 		Random r = new Random();
-		resultado = r.getIntRand(lados) + 1; // 1 a Lados
-		/* resultado do dado deve ser armazenado */
+		resultado = Math.abs((r.getIntRand(lados)));
+		resultado++; // mudar min de 0 pra 1
 		return resultado;
 	}
 
@@ -53,47 +52,43 @@ public class Dado {
 	 */
 	@Override
 	public java.lang.String toString() {
-		String d;
-		if(lados == 6) {
+		String d = " "; // inicializar string vazia para retorno caso não seja de 6 lados
+		if (lados == 6) {
 			switch(resultado) {
 				case 1:
 					d = "+-----+\n|     |\n|  *  |\n|     |\n+-----+";
-					System.out.println(d);
+					System.out.print(d);
 					return d;
 				case 2:
 					d = "+-----+\n|    *|\n|     |\n|*    |\n+-----+";
-					System.out.println(d);
+					System.out.print(d);
 					return d;
 				case 3:
 					d = "+-----+\n|    *|\n|  *  |\n|*    |\n+-----+";
-					System.out.println(d);
+					System.out.print(d);
 					return d;
 				case 4:
 					d = "+-----+\n|*   *|\n|     |\n|*   *|\n+-----+";
-					System.out.println(d);
+					System.out.print(d);
 					return d;
 				case 5:
 					d = "+-----+\n|*   *|\n|  *  |\n|*   *|\n+-----+";
-					System.out.println(d);
+					System.out.print(d);
 					return d;
 				case 6:
 					d = "+-----+\n|*   *|\n|*   *|\n|*   *|\n+-----+";
-					System.out.println(d);
+					System.out.print(d);
 					return d;
 			}
 		} else {
 			System.out.println("Esse tipo de dado não pode ser impresso.");
-			return;
+            return d;
 		}
+		return d;
 	}
+
+	public static void main(String[] args) {
+		
+	}
+
 }
-
-
-
-
-
-
-
-
-
-

@@ -1,6 +1,7 @@
 // Felipe Scrochio Custódio - 9442688
 import java.util.Calendar;
 public class Random {
+	
 	private long p = 2147483648l;
 	private long m = 843314861;
 	private long a = 453816693;
@@ -14,8 +15,7 @@ public class Random {
 		return d / p;
 	}
 	
-	public int getIntRand(int max)
-	{
+	public int getIntRand(int max) {
 		double d = getRand() * max;
 		return (int) d;
 	}
@@ -24,8 +24,7 @@ public class Random {
        xi = semente;		
 	}
 
-	public Random(int k)
-	{
+	public Random(int k) {
 		xi = k;
 	}
 	
