@@ -1,4 +1,4 @@
 # yahtzee
 
-College assignment
+## College assignment:
 Yahtzee game in Java
